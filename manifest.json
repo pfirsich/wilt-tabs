@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Wilt Tabs",
+    "version": "1.0",
+    "description": "Bookmarks and closes tabs that were not accessed for a long time",
+    "icons": {
+        "512": "wilt-tabs.png"
+    },
+    "permissions": [
+        "bookmarks",
+        "storage",
+        "tabs"
+    ],
+    "browser_action": {
+        "browser_style": true,
+        "default_title": "Wilt Tabs",
+        "default_icon": "wilt-tabs.png",
+        "default_popup": "wilt-tabs.html"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "wilt-tabs@joelschumacher.de",
+            "strict_min_version": "102.0"
+        }
+    }
+}

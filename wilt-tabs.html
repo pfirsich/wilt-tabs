@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        html,
+        body {
+            width: 600px;
+            height: 600px;
+        }
+
+        .popup {
+            margin: 10px;
+        }
+
+        #open-tabs-list {
+            margin: 5px;
+            padding: 0px;
+            list-style-type: none;
+        }
+
+        #bookmark-folder-tree {
+            margin: 5px 20px;
+            padding: 0px;
+        }
+
+        li.selected {
+            background-color: #eee;
+        }
+
+        li.selected * {
+            background-color: #fff;
+        }
+
+        #bookmark-folder-tree-container {
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid;
+        }
+
+        #open-tabs-list-container {
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="popup">
+        <h1>Wilt Tabs</h1>
+
+        <form>
+            <label for="duration">Duration until wilting:</label>
+            <input type="number" id="duration" name="duration" min="1" value="1">
+            <br>
+            <input type="radio" id="minutes" name="duration-type" value="minutes">
+            <label for="minutes">Minutes</label>
+            <input type="radio" id="hours" name="duration-type" value="hours">
+            <label for="hours">Hours</label>
+            <input type="radio" id="days" name="duration-type" value="days">
+            <label for="days">Days</label>
+            <br>
+
+            <input type="checkbox" id="bookmark-tabs-checkbox" name="bookmark-tabs-checkbox">
+            <label for="bookmark-tabs-checkbox">Bookmark wilted tabs</label><br>
+
+            <div id="bookmark-folder-container">
+                <label for="bookmark-folder">Selected Folder:</label>
+                <input type="text" id="bookmark-folder" name="bookmark-folder" readonly>
+            </div>
+
+            <div id="bookmark-folder-tree-container">
+                <ul id="bookmark-folder-tree">
+                </ul>
+            </div>
+
+            <input type="checkbox" id="create-daily-subfolder-checkbox" name="create-daily-subfolder-checkbox">
+            <label for="create-daily-subfolder-checkbox">Create a subfolder for each day</label><br>
+
+            <input type="checkbox" id="include-history-checkbox" name="include-history-checkbox">
+            <label for="include-history-checkbox">Include tab history in bookmark description</label><br>
+
+            <!--<p id="next-check">Next Check: <span></span></p><br>-->
+            <input type="button" value="Wilt Now"><br>
+        </form>
+
+        <h2>Open Tabs:</h2>
+        <div id="open-tabs-list-container">
+            <ul id="open-tabs-list">
+            </ul>
+        </div>
+    </div>
+
+    <script src="wilt-tabs.js"></script>
+</body>
+
+</html>
